@@ -1,0 +1,26 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<BorderPane fx:controller="controllers.IndexController"
+            xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 20 60;">
+    <top>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 0 15;">
+            <Label fx:id="roomTitle" style="-fx-padding: 0 50 0 0;">聊天室</Label>
+            <TextField fx:id="roomInput" promptText="输入你要去的聊天室" />
+            <Button fx:id="changeRoomBtn">切换聊天室</Button>
+            <Button fx:id="backToSquareBtn">回到广场</Button>
+        </HBox>
+    </top>
+    <center>
+        <TextArea fx:id="messageArea" />
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 15 0 0;">
+            <TextField fx:id="messageInput" prefWidth="400" />
+            <Button fx:id="sendMessageBtn">发送</Button>
+        </HBox>
+    </bottom>
+</BorderPane>
