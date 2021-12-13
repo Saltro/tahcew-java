@@ -10,8 +10,8 @@
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 0 15;">
             <Label fx:id="roomTitle" style="-fx-padding: 0 50 0 0;">聊天室</Label>
             <TextField fx:id="roomInput" promptText="输入你要去的聊天室" />
-            <Button fx:id="changeRoomBtn">切换聊天室</Button>
-            <Button fx:id="backToSquareBtn">回到广场</Button>
+            <Button onAction="#onChangeRoomBtn">切换聊天室</Button>
+            <Button onAction="#onBackToSquareBtn">回到广场</Button>
         </HBox>
     </top>
     <center>
@@ -20,7 +20,7 @@
     <bottom>
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 15 0 0;">
             <TextField fx:id="messageInput" prefWidth="400" />
-            <Button fx:id="sendMessageBtn">发送</Button>
+            <Button onAction="#onSendMessageBtn">发送</Button>
         </HBox>
     </bottom>
 </BorderPane>
