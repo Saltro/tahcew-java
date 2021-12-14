@@ -6,13 +6,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import network.Session;
 import tasks.ReceiveTask;
 import utils.Log;
 
 public class IndexController {
     private Session session;
-    private ReceiveTask task;
 
     @FXML
     private Label roomTitle;
@@ -28,13 +29,9 @@ public class IndexController {
 
     public void setSession(Session session) {
         this.session = session;
-
-
-        new Thread(task).start();
     }
 
     public void setTask(ReceiveTask task) {
-        this.task = task;
         task.messageProperty().addListener((observable, oldValue, newValue) -> interpret(newValue));
     }
 
@@ -74,6 +71,6 @@ public class IndexController {
     }
 
     private void showRoomTitle(String title) {
-        roomTitle.setText("聊天室 " + title);
+        roomTitle.setText(title);
     }
 }
