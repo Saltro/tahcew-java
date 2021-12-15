@@ -12,7 +12,7 @@
     <center>
         <VBox prefHeight="768" prefWidth="850">
             <HBox alignment="CENTER" prefHeight="42">
-                <Label fx:id="roomTitle" />
+                <Label fx:id="roomTitle" styleClass="room-title" />
             </HBox>
             <TextArea
                     fx:id="messageArea"

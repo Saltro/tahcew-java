@@ -3,7 +3,14 @@
     -fx-background-color: #FFFFFF;
 }
 
-.message-area {
+.room-title {
+    -fx-font-size: 20;
+    -fx-font-weight: 700;
+    -fx-text-fill: #303030;
+}
+
+.message-area,
+.input-area {
     -fx-control-inner-background: #F4F5F7;
     -fx-background-color: transparent;
     -fx-border-color: #D8D8D8;
@@ -11,16 +18,11 @@
     -fx-border-width: 0 0 1 0;
     -fx-border-radius: 0;
     -fx-faint-focus-color: transparent;
+    -fx-text-fill: #303030;
 }
 
 .input-area {
-    -fx-control-inner-background: #F4F5F7;
-    -fx-background-color: transparent;
-    -fx-border-color: #D8D8D8;
-    -fx-border-style: solid;
     -fx-border-width: 0 0 0 0;
-    -fx-border-radius: 0;
-    -fx-faint-focus-color: transparent;
 }
 
 .sidebar {

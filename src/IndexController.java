@@ -60,7 +60,7 @@ public class IndexController {
     }
 
     private void showChat(String user, String chat) {
-        messageArea.setText(messageArea.getText() + Log.getTime() + "：" + user + "：" + chat + "\n");
+        messageArea.appendText("[ " + Log.getTime() + " ] " + user + "：" + chat + "\n");
     }
 
     private void showRoomTitle(String title) {
