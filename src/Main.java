@@ -1,4 +1,3 @@
-import controllers.IndexController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
@@ -14,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL location = getClass().getResource("resources/views/index.fxml");
+        URL location = getClass().getResource("index.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(location);
         fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
@@ -27,7 +26,7 @@ public class Main extends Application {
         ReceiveTask task = new ReceiveTask(session);
         indexController.setTask(task);
 
-        Scene scene = new Scene(root, 1024, 600);
+        Scene scene = new Scene(root, 1024, 768);
         primaryStage.setTitle("Tahcew Java版");
         primaryStage.setScene(scene);
         // 退出时关闭 session

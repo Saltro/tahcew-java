@@ -1,8 +1,5 @@
-package controllers;
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -12,7 +9,10 @@ import network.Session;
 import tasks.ReceiveTask;
 import utils.Log;
 
-public class IndexController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class IndexController implements Initializable {
     private Session session;
 
     @FXML
@@ -25,7 +25,7 @@ public class IndexController {
     private TextArea messageArea;
 
     @FXML
-    private TextField messageInput;
+    private TextArea inputArea;
 
     public void setSession(Session session) {
         this.session = session;
@@ -38,20 +38,17 @@ public class IndexController {
     @FXML
     private void onChangeRoomBtn() {
         String roomName = roomInput.getText();
-        if (session.sendMessage("join/" + roomName)) {
+        if (roomName.length() > 0 && session.sendMessage("join/" + roomName)) {
             roomInput.setText("");
         }
     }
 
     @FXML
-    private void onBackToSquareBtn() {
-        session.sendMessage("join/广场");
-    }
-
-    @FXML
-    private void onSendMessageBtn() {
-        if (session.sendMessage("chat/" + messageInput.getText())) {
-            messageInput.setText("");
+    private void onInputKey(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER && inputArea.getText().trim().length() > 0) {
+            if (session.sendMessage("chat/" + inputArea.getText())) {
+                inputArea.setText("");
+            }
         }
     }
 
@@ -72,5 +69,11 @@ public class IndexController {
 
     private void showRoomTitle(String title) {
         roomTitle.setText(title);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        messageArea.setEffect(null);
+        inputArea.setEffect(null);
     }
 }

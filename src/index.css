@@ -1,0 +1,38 @@
+.container {
+    -fx-font-size: 14;
+    -fx-background-color: #FFFFFF;
+}
+
+.message-area {
+    -fx-control-inner-background: #F4F5F7;
+    -fx-background-color: transparent;
+    -fx-border-color: #D8D8D8;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-radius: 0;
+    -fx-faint-focus-color: transparent;
+}
+
+.input-area {
+    -fx-control-inner-background: #F4F5F7;
+    -fx-background-color: transparent;
+    -fx-border-color: #D8D8D8;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-radius: 0;
+    -fx-faint-focus-color: transparent;
+}
+
+.sidebar {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-style: solid;
+    -fx-border-color: #D8D8D8;
+}
+
+.room-input {
+    -fx-background-color: transparent;
+    -fx-border-color: #D8D8D8;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-radius: 0;
+}

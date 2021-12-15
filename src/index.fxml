@@ -1,0 +1,23 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:controller="IndexController"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="index.css" styleClass="container">
+    <center>
+        <VBox prefHeight="768" prefWidth="850">
+            <HBox alignment="CENTER" prefHeight="42">
+                <Label fx:id="roomTitle" />
+            </HBox>
+            <TextArea fx:id="messageArea" editable="false" prefHeight="608" focusTraversable="false" styleClass="message-area" />
+            <TextArea fx:id="inputArea" prefHeight="118" onKeyPressed="#onInputKey" styleClass="input-area" />
+        </VBox>
+    </center>
+    <right>
+        <VBox alignment="TOP_CENTER" spacing="12" styleClass="sidebar">
+            <TextField fx:id="roomInput" prefHeight="35" promptText="输入你要去的聊天室" onAction="#onChangeRoomBtn" styleClass="room-input" />
+        </VBox>
+    </right>
+</BorderPane>
