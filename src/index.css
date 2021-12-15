@@ -38,3 +38,7 @@
     -fx-border-width: 0 0 1 0;
     -fx-border-radius: 0;
 }
+
+.room-list {
+    -fx-padding: 0 5;
+}

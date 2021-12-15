@@ -38,6 +38,7 @@
                     onAction="#onRoomInput"
                     styleClass="room-input"
             />
+            <VBox fx:id="roomList" alignment="TOP_CENTER" spacing="12" styleClass="room-list" />
         </VBox>
     </right>
 </BorderPane>
