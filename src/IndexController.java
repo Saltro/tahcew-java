@@ -8,6 +8,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import network.Session;
+import network.SessionStatus;
 import tasks.ReceiveTask;
 import utils.Log;
 
@@ -31,6 +32,10 @@ public class IndexController {
 
     public void setSession(Session session) {
         this.session = session;
+        if (session.getStatus() == SessionStatus.SESSION_NO_SERVER) {
+            roomTitle.setText("连接不到服务器！");
+            showChat("系统", "连接不到服务器！请检查网络连接或联系相关人员。");
+        }
     }
 
     public void setTask(ReceiveTask task) {

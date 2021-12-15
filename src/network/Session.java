@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 
 public class Session {
@@ -58,6 +59,9 @@ public class Session {
             String msg = new String(message).trim();
             Log.info("接收成功 " + msg);
             return msg;
+        } catch (SocketException e) {
+            Log.warn("套接字已关闭");
+            return "";
         } catch (IOException e) {
             e.printStackTrace();
             Log.error("接收失败");
@@ -74,6 +78,8 @@ public class Session {
         } catch (IOException e) {
             e.printStackTrace();
             Log.info("套接字关闭失败");
+        } catch (NullPointerException e) {
+            Log.info("套接字已关闭");
         }
     }
 }
